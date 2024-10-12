@@ -1,0 +1,307 @@
+:root {
+  --lavander-color: #cbc5ea;
+  --dark-lavander-color: #73628a;
+  --dark-color: #313d5a;
+  --light-color: #eaeaea;
+  --input-color: #beadd4;
+}
+
+body {
+  background: var(--light-color);
+}
+
+/* Header secion */
+
+.header-container {
+  background: var(--lavander-color);
+  padding: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-container .header-section {
+  width: 42%;
+  margin: 0 auto;
+}
+
+.header-container .header-section h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: var(--dark-color);
+}
+
+.task-input-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.header-section .task-input-container .task-input {
+  width: 80%;
+  height: 3rem;
+  background: var(--input-color);
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.header-section .task-input-container .add-task-button {
+  padding: 0.25rem;
+  background: var(--dark-lavander-color);
+  border-radius: 0.5rem;
+  width: 20%;
+  height: 3rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  color: #ffffff;
+}
+
+/* Sidebar section */
+
+.wrapper {
+  background: var(--light-color);
+  padding-top: 3.5rem;
+  display: flex;
+}
+
+.wrapper .container {
+  width: 20%;
+  text-align: end;
+}
+
+.container .counter-item {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.container .counter-item .counter-label {
+  background: var(--dark-color);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  color: #eaeaea;
+  width: 4.5rem;
+  display: inline-block;
+  text-align: left;
+}
+
+.container .counter-item #remaining-count {
+  background: var(--lavander-color);
+  padding: 0.3rem 0.5rem;
+  margin-left: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  color: #eaeaea;
+  border-radius: 0 0.5rem 0.5rem 0;
+  position: relative;
+  left: -0.5rem;
+}
+
+.container .counter-item #completed-count {
+  background: var(--lavander-color);
+  padding: 0.3rem 0.5rem;
+  margin-left: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  color: #eaeaea;
+  border-radius: 0 0.5rem 0.5rem 0;
+  position: relative;
+  left: -0.5rem;
+}
+
+.container .counter-item #total-count {
+  background: var(--lavander-color);
+  padding: 0.3rem 0.5rem;
+  margin-left: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  color: #eaeaea;
+  border-radius: 0 0.5rem 0.5rem 0;
+  position: relative;
+  left: -0.5rem;
+}
+
+.container .counter-item:hover .counter-label,
+.container .counter-item:hover #remaining-count,
+.container .counter-item:hover #completed-count,
+.container .counter-item:hover #total-count {
+  background-color: #b3a0e5;
+  transition: background-color 0.3s ease;
+}
+
+/* Task-list */
+
+.wrapper .task-list-container {
+  width: 25%;
+  margin-left: 17.5%;
+}
+
+.task-list .task-item .task-details {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--dark-color);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 0.875rem;
+}
+
+.task-item .task-details .left {
+  align-content: center;
+  text-align: start;
+  width: 65%;
+}
+
+.task-details .left .task-checkbox {
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  vertical-align: sub;
+  border: 0.15em solid #73628a;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+.task-checkbox:checked {
+  background-color: #73628a;
+  border: none;
+}
+
+.task-checkbox:checked::before {
+  content: "";
+  position: absolute;
+  bottom: 0rem;
+  width: 1rem;
+  height: 1rem;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>');
+  background-size: cover;
+  color: #ffffff;
+}
+
+.task-text {
+  display: inline-block;
+  font-size: 1em;
+  margin-left: 0.5em;
+}
+
+.task-checkbox:checked + .task-text {
+  text-decoration: line-through;
+  color: #73628a;
+}
+
+.task-item .task-details .right {
+  text-align: end;
+  width: 35%;
+}
+
+.task-details .right button {
+  border: none;
+  background: none;
+}
+
+.edit-input {
+  width: 80%;
+  margin-left: 0.5rem;
+  background: var(--lavander-color);
+  border: none;
+  border-radius: 1rem;
+  font-size: 1em;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--dark-color);
+  outline: none;
+}
+
+.task-list-container li {
+  background: var(--lavander-color);
+  margin-bottom: 2rem;
+  padding: 2.375rem 2rem;
+  border-radius: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-top: 0;
+}
+
+/* Footer */
+
+footer {
+  background: var(--light-color);
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  color: #1e1e1e;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+@media (max-width: 1100px) {
+  /* Header section */
+
+  .header-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .header-container .header-section {
+    width: 100%;
+  }
+
+  .header-section .task-input-container .task-input {
+    width: 100%;
+  }
+
+  .header-section .task-input-container {
+    flex-wrap: wrap;
+  }
+
+  .header-section .task-input-container .add-task-button {
+    width: 100%;
+  }
+
+  /* Sidebar */
+
+  .wrapper {
+    padding: 1.5rem 0.5rem;
+    flex-direction: column;
+  }
+
+  .wrapper .container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .container .counter-item .counter-label {
+    width: unset;
+  }
+
+  /* Task list */
+
+  .wrapper .task-list-container {
+    margin: 1rem auto;
+    width: 95%;
+  }
+}
